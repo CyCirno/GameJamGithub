@@ -10,7 +10,7 @@ public class Ragdoll : MonoBehaviour
     void Awake()
     {
         _ragdollRigidbodies = GetComponentsInChildren<Rigidbody>();
-        disableRagdoll();
+        
     }
 
     // Update is called once per frame

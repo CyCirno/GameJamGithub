@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
         timeSinceJump += Time.deltaTime;
         timeSinceThrust += Time.deltaTime;
 
+        foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode))) { if (Input.GetKeyDown(kcode)) Debug.Log("KeyCode down: " + kcode); }
 
         // Player movement
         float horizontalInput = Input.GetAxis(horizontalAxis);

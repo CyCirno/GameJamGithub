@@ -4,11 +4,14 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody leftArm;
     public Rigidbody rightArm;
+    public Rigidbody leftHip;
+    public Rigidbody rightHip;
 
 
     public float speed = 5f; // Adjust the speed of movement
     public float jumpForce = 10f; // Adjust the force of the jump
-    private bool isGrounded;
+    public float armSpeed = 5f;
+    public bool isGrounded; 
     private Rigidbody rb;
 
     void Start()
@@ -18,9 +21,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Check if the player is on the ground
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, 0.1f);
-
         // Player movement
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
@@ -29,19 +29,31 @@ public class PlayerController : MonoBehaviour
         //transform.Translate(movement);
 
         // Throwin hands
-        //Vector3 leftArm = new Vector3
+
+        if (Input.GetKey("e"))
+        {
+           Vector3 leftArm = new Vector3(1, 0.75f, 0f) * armSpeed;
+            rb.AddForce(leftArm, ForceMode.Force);
+        }
 
 
         // Player jump
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded)
         {
-            Jump();
             Debug.Log("Player is grounded");
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+            }
         }
     }
 
     void Jump()
     {
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        leftHip.AddForce(new Vector3(0, jumpForce,0));
+        rightHip.AddForce(new Vector3(0, jumpForce, 0));
+        isGrounded = false;
     }
+
+ 
 }

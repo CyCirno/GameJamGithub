@@ -7,12 +7,18 @@ public class PlayerController : MonoBehaviour
     public Rigidbody leftHip;
     public Rigidbody rightHip;
 
-
+    public float jumpCooldown = 3;
+    public float thrustCooldown = 1.5f;
     public float speed = 5f; // Adjust the speed of movement
     public float jumpForce = 10f; // Adjust the force of the jump
-    public float armSpeed = 5f;
-    public bool isGrounded; 
+    public float thrustSpeed = 5f;
     private Rigidbody rb;
+    private float timeSinceJump = 2;
+    private float timeSinceThrust = 1;
+    public string horizontalAxis;
+    public string verticalAxis;
+    public string playerJump;
+    public string playerThrust;
 
     void Start()
     {
@@ -21,38 +27,41 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        timeSinceJump += Time.deltaTime;
+        timeSinceThrust += Time.deltaTime;
+
+
         // Player movement
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxis(horizontalAxis);
+        float verticalInput = Input.GetAxis(verticalAxis);
         Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * speed;// * Time.deltaTime;
         rb.AddForce(movement, ForceMode.Acceleration);
         //transform.Translate(movement);
 
         // Throwin hands
 
-        if (Input.GetKey("e"))
+        if (Input.GetButton(playerThrust) && timeSinceThrust >= thrustCooldown)
         {
-           Vector3 leftArm = new Vector3(1, 0.75f, 0f) * armSpeed;
-            rb.AddForce(leftArm, ForceMode.Force);
+           Vector3 thrustMovement = new Vector3(1f, 0f, 0f) * thrustSpeed;
+           rb.AddForce(thrustMovement, ForceMode.Impulse);
+           timeSinceThrust = 0;
         }
 
 
         // Player jump
-        if (isGrounded)
-        {
-            Debug.Log("Player is grounded");
-            if (Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetButtonDown(playerJump) && timeSinceJump >= jumpCooldown)
             {
                 Jump();
             }
-        }
+      
     }
 
     void Jump()
     {
-        leftHip.AddForce(new Vector3(0, jumpForce,0));
-        rightHip.AddForce(new Vector3(0, jumpForce, 0));
-        isGrounded = false;
+        rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+        timeSinceJump = 0;
+        
     }
 
  

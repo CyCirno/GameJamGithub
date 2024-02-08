@@ -373,6 +373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29121ee29e834954984b89d40f46d078, type: 3}
       propertyPath: m_LocalScale.x
+<<<<<<< Updated upstream
       value: 2421.946
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29121ee29e834954984b89d40f46d078, type: 3}
@@ -382,6 +383,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 29121ee29e834954984b89d40f46d078, type: 3}
       propertyPath: m_LocalScale.z
       value: 559.4712
+=======
+      value: 758.65234
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 29121ee29e834954984b89d40f46d078, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 758.65234
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 29121ee29e834954984b89d40f46d078, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 175.2492
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29121ee29e834954984b89d40f46d078, type: 3}
       propertyPath: m_LocalPosition.x
@@ -437,6 +449,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 29121ee29e834954984b89d40f46d078, type: 3}
       insertIndex: -1
+<<<<<<< Updated upstream
       addedObject: {fileID: 1453219588}
   m_SourcePrefab: {fileID: 100100000, guid: 29121ee29e834954984b89d40f46d078, type: 3}
 --- !u!1001 &326802611
@@ -1442,10 +1455,19 @@ CapsuleCollider:
   m_Direction: 1
   m_Center: {x: 0, y: 1.238025, z: 0}
 --- !u!1 &1453219584 stripped
+=======
+      addedObject: {fileID: 550337614}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 29121ee29e834954984b89d40f46d078, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 550337615}
+  m_SourcePrefab: {fileID: 100100000, guid: 29121ee29e834954984b89d40f46d078, type: 3}
+--- !u!1 &550337610 stripped
+>>>>>>> Stashed changes
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 29121ee29e834954984b89d40f46d078, type: 3}
   m_PrefabInstance: {fileID: 277941643}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!65 &1453219588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1534,14 +1556,23 @@ GameObject:
   m_PrefabInstance: {fileID: 458503769}
   m_PrefabAsset: {fileID: 0}
 --- !u!54 &1679779074
+=======
+--- !u!54 &550337614
+>>>>>>> Stashed changes
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1679779072}
   serializedVersion: 4
   m_Mass: 1.25
+=======
+  m_GameObject: {fileID: 550337610}
+  serializedVersion: 4
+  m_Mass: 3
+>>>>>>> Stashed changes
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1558,14 +1589,22 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
+<<<<<<< Updated upstream
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!144 &1679779075
 CharacterJoint:
+=======
+  m_Constraints: 126
+  m_CollisionDetection: 1
+--- !u!64 &550337615
+MeshCollider:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1679779072}
   m_ConnectedBody: {fileID: 860304027}
   m_ConnectedArticulationBody: {fileID: 0}
@@ -1613,6 +1652,9 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679779072}
+=======
+  m_GameObject: {fileID: 550337610}
+>>>>>>> Stashed changes
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1624,6 +1666,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
+<<<<<<< Updated upstream
   serializedVersion: 2
   m_Radius: 0.24499102
   m_Height: 0.9799641
@@ -1730,6 +1773,12 @@ CapsuleCollider:
   m_Height: 2.4752316
   m_Direction: 1
   m_Center: {x: 0, y: 1.2376158, z: 0}
+=======
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: 29121ee29e834954984b89d40f46d078, type: 3}
+>>>>>>> Stashed changes
 --- !u!1 &2019842600
 GameObject:
   m_ObjectHideFlags: 0

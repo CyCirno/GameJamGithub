@@ -20,11 +20,12 @@ public class PlayerController : MonoBehaviour
     public string verticalAxis;
     public string playerJump;
     public string playerThrust;
-    public AudioClip squeak_1;
+    public AudioSource tickSource;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        tickSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -56,8 +57,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown(playerJump) && timeSinceJump >= jumpCooldown)
             {
                 Jump();
-            audioSource.Play(squeak_1);
-        }
+            tickSource.Play();
+            }
 
 
     }

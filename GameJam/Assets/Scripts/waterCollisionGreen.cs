@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerCollision : MonoBehaviour
+public class waterCollisionGreen : MonoBehaviour
 {
 
     private bool isColliding = false;
@@ -12,7 +12,7 @@ public class PlayerCollision : MonoBehaviour
         if (collision.collider.CompareTag("Water"))
         {
             // Do something when player collides with the plane
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(3);
         }
     }
 

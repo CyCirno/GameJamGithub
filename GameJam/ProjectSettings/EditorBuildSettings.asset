@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Finish.unity
     guid: 58ad4fadf8b175347b312a468ceeab84
+  - enabled: 1
+    path: Assets/Levels/Win_Frog.unity
+    guid: 76869046602b1e846b1c16105ab4da79
+  - enabled: 1
+    path: Assets/Levels/Win_Frog2.unity
+    guid: f3fa099cea6c184409eeb0ebfffa46cf
   m_configObjects: {}

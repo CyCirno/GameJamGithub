@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         // Player movement
         float horizontalInput = Input.GetAxis(horizontalAxis);
         float verticalInput = Input.GetAxis(verticalAxis);
-        Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * speed //* Time.deltaTime;
+        Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * speed; //* Time.deltaTime;
         rb.AddForce(movement, ForceMode.Acceleration);
         //transform.Translate(movement);
 

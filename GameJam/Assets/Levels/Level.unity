@@ -502,6 +502,7 @@ MonoBehaviour:
   verticalAxis: Vertical2
   playerJump: Jump2
   playerThrust: Thrust2
+  squeak_1: {fileID: 0}
 --- !u!114 &325130199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1781,6 +1782,7 @@ MonoBehaviour:
   verticalAxis: Vertical1
   playerJump: Jump1
   playerThrust: Thrust1
+  squeak_1: {fileID: 8300000, guid: 480073efafc24cf4d8b08b996cc11b20, type: 3}
 --- !u!54 &1267828591
 Rigidbody:
   m_ObjectHideFlags: 0

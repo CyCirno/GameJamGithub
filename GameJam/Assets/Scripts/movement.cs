@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButton(playerThrust) && timeSinceThrust >= thrustCooldown)
         {
-           Vector3 thrustMovement = new Vector3(1f, 0f, 0f) * thrustSpeed;
+           Vector3 thrustMovement = new Vector3(horizontalInput, 0f, 1.5f) * thrustSpeed;
            rb.AddForce(thrustMovement, ForceMode.Impulse);
            timeSinceThrust = 0;
         }

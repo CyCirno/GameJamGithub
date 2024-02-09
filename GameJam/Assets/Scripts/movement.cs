@@ -20,12 +20,12 @@ public class PlayerController : MonoBehaviour
     public string verticalAxis;
     public string playerJump;
     public string playerThrust;
-    public AudioSource tickSource;
+    public AudioSource TickSource;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        tickSource = GetComponent<AudioSource>();
+        TickSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -57,8 +57,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown(playerJump) && timeSinceJump >= jumpCooldown)
             {
                 Jump();
-            tickSource.Play();
-            }
+                TickSource.Play();
+        }
 
 
     }
@@ -69,6 +69,19 @@ public class PlayerController : MonoBehaviour
         timeSinceJump = 0;
         
     }
+    // OnCollisionEnter is called when this collider/rigidbody has begun touching another rigidbody/collider.
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Check if the collision involves another player
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Calculate reflection direction
+            Vector3 reflection = Vector3.Reflect(rb.velocity, collision.contacts[0].normal);
 
- 
+            // Apply the reflection force to both players
+            rb.velocity = reflection;
+            collision.gameObject.GetComponent<Rigidbody>().velocity = -reflection;
+        }
+    }
+
 }
